@@ -17,7 +17,7 @@ if (!massValue)
     //photo.innerHTML="";
     output.style.color="red";
     output.innerHTML="invalid mass !";
-    //window.location.reload();
+    window.location.reload();
  }
     else{
 
@@ -25,7 +25,7 @@ if (!massValue)
        // photo.innerHTML="";
         output.style.color="red";
     output.innerHTML="please select a valid planet!";
-    //window.location.reload();
+    window.location.reload();
 }
     else{
 
