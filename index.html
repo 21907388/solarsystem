@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Solar System: Document Object Model:30 Days Of JavaScript</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+	<style>
+		#body{
+		height: 300px;
+		background-image: url("images/galaxy.gif");
+		}
+		.centered {
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+}
+.center {
+    margin: 0 auto;
+    /*text-align: left;*/
+    width: 700px;
+}
+.flex {
+display:flex;
+}
+#print{
+	margin-top: 25% ;
+	margin-bottom: 25%;
+	margin-left: 10%;
+	margin-right: 10%;
+    text-align: center;
+	background-color:black ;
+	font-size: large;
+}
+		</style>
+		
+
+</head>
+
+<body id="body" class="center">
+	<header>
+		<h1 style="color:white">Calculate the weight of an object on a planet </h1>
+
+		<input type="text" id="mass" placeholder="Mass in Kilogram" />
+		<select id="planets" class="planets">
+			<option value='none'>--select planet-- </option>
+			<option value='none'>Mercury</option>
+			<option value='none'>Venus</option>
+			<option value='none'>Hearth</option>
+			<option value='none'>Mars</option>
+			<option value='none'>Jupiter</option>
+			<option value='none'>Saturn</option>
+			<option value='none'>Uranus</option>
+			<option value='none'>Neptune</option>
+			<option value='none'>Pluto</option>
+			<option value='none'>Moon</option>
+		</select>
+		<button>Calculate weight</button>
+	</br>
+</br>
+
+	</header>
+	<main>
+		<div class="centered flex" style="background-color: rgba(59, 52, 52, 0.5);" >
+			<div id="picture" class="flex-item image" style="text-align:left ;">
+				<img id="img" src='./images/earth.png' class="planet-image" style="height: 400px ; " width="400px;"/>
+			</div>
+			
+			<div id="print" class="flex-item description" style=>
+
+			</div>
+
+		</div>
+
+
+	</main>
+
+
+
+
+
+	<script src="scripts/main.js"></script>
+</body>
+
+</html>
