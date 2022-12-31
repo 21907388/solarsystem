@@ -1,44 +1,60 @@
-const e = document.getElementById("planets");
-const planet = e.options[e.selectedIndex].text;
-const mass = document.getElementById("mass");
+
 const cal=document.querySelector("button");
-const pic=document.getElementById("img");
-const photo=document.getElementById("picture")
-let result;
-const output=document.getElementById("print");
-let arr=[1,2,5,6,7,8,7,9,7,3,7];
-let planetNames=["mercury","mercury","venus","earth","mars","jupiter","saturn","uranus","neptune","pluto","moon"]
-let selectedPlanet;
+const data=document.querySelector(".loader");
+const out=document.getElementById("result");
+const loader=document.getElementById("loader");
+const nom=document.getElementById("name");
+const surname=document.getElementById("surname");
+const output=document.getElementById("last");
+const image=document.getElementById("img");
+const footer=document.getElementById("footer");
+const foot=document.getElementById("image");
+const header=document.getElementById("header");
 
+
+let nameText=nom.value;
+let surnameText=surname.value;
+
+let pictures=["friend","images","joy","money","promotion","success","surprise","thinking","travel","wedding"];
+let texts=["You will meet someone who will become a very good friend",
+"You will meet the love of your life", "You will experiment joy beyond measure",
+"You will touch a lot of money","You will be promoted to a different position",
+"You will succeed in everything you will do","You will be surprised more than you expect",
+"You will find answers to your hardest questions in life","You will travel the world",
+"You will get married"];
+
+loader.style.display="none";
+foot.style.display="none";
+footer.style.display="none";
+let x = Math.floor((Math.random() * 10) + 1);
 cal.addEventListener('click', ()=> {
-    let massValue = parseInt(mass.value);
-if (!massValue)
-{
-    //photo.innerHTML="";
-    output.style.color="red";
-    output.innerHTML="invalid mass !";
-    //window.location.reload();
- }
-    else{
-
-    if (e.selectedIndex==0){
-       // photo.innerHTML="";
-        output.style.color="red";
-    output.innerHTML="please select a valid planet!";
-    //window.location.reload();
+    output.innerHTML="";
+    foot.style.display="none";
+    footer.style.display="none";
+if( (nom.value== "") && (surname.value == "") ){
+    output.innerHTML="Please enter your name and surname properly !";
+    output.style.color="white";
+    
 }
-    else{
+else{
 
-        output.style.color="white";
+    output.style.display="none";
+     header.style.display="none";
+    loader.style.display="block";
+    function showPage() {
+        loader.style.display="none";
+       foot.style.display="block";
+       image.src=`images/${pictures[x-1]}.jpg`;
+       footer.style.color="white";
+       footer.innerHTML="Dear "+nom.value+" "+surname.value+", in 2023 <br>"+texts[x-1];
+       footer.style.display="block";
+       
+       }
+     
+      setTimeout(showPage, 3000);
+    
 
-        selectedPlanet=planetNames[e.selectedIndex];
-        result=arr[e.selectedIndex]*massValue*9.8;
-        output.innerHTML=`${massValue} kgs object weights ${result} Newtons in ${selectedPlanet}`;
-        console.log(selectedPlanet);
-        console.log(e.selectedIndex);
-        pic.src=`images/${selectedPlanet}.png`;
-        console.log(result);
-        console.log(massValue);
     }
-}
+
+
 })
